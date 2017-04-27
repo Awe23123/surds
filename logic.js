@@ -18,7 +18,6 @@ function simpleSurd(num) {
 		if (num % i == 0 && i != num / i) {
 			var key = i;
 			var value = num / i;
-			console.log(key + " " + value);
 			var sqrtK = Math.sqrt(key);
 			var sqrtV = Math.sqrt(value);
 			if (((sqrtK ^ 0) === sqrtK) ^ ((sqrtV ^ 0) === sqrtV)) {
