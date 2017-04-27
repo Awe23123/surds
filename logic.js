@@ -6,7 +6,7 @@ setInterval(function(){
 		n++;
 	}
 	var h = document.createElement("p");
-    var t = document.createTextNode((n - 1) + " = " + s);
+    var t = document.createTextNode("√" + (n - 1) + " = " + s);
     h.appendChild(t);
     document.body.appendChild(h);
 	n++;
