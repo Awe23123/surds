@@ -22,7 +22,6 @@ function simpleSurd(num) {
 			var sqrtV = Math.sqrt(value);
 			if (((sqrtK ^ 0) === sqrtK) ^ ((sqrtV ^ 0) === sqrtV)) {
 				if((sqrtK ^ 0) === sqrtK){
-					console.log("key");
 					return sqrtK + "√" + value;
 				}else{
 					return sqrtV + "√" + key;
