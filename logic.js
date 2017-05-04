@@ -23,10 +23,11 @@ function simpleSurd(num) {
 			var sqrtK = Math.sqrt(key);
 			var sqrtV = Math.sqrt(value);
 			if (isInt(sqrtK) ^ isInt(sqrtV)) {
+				a = " or √(" + key + " × " + value + ")";
 				if(isInt(sqrtK)){
-					return sqrtK + "√" + value;
+					return sqrtK + "√" + value + a;
 				}else{
-					return sqrtV + "√" + key;
+					return sqrtV + "√" + key + a;
 				}
 			}
 		}
