@@ -1,14 +1,17 @@
+print("searchA", "");
+print("searchB", "");
+print("output", "");
+
 n = 2;
 setInterval(function(){
-	s = simpleSurd(n);
-	while(s.startsWith("√")){
+	try{
 		s = simpleSurd(n);
-		n++;
+		var h = document.createElement("p");
+		var t = document.createTextNode("√" + n + " = " + s);
+		h.appendChild(t);
+		document.body.appendChild(h);
+	}catch(err){
 	}
-	var h = document.createElement("p");
-    var t = document.createTextNode("√" + (n - 1) + " = " + s);
-    h.appendChild(t);
-    document.body.appendChild(h);
 	n++;
 }, 1);
 
@@ -28,10 +31,43 @@ function simpleSurd(num) {
 			}
 		}
 	}
-	return "√" + num;
+	throw "No result";
+}
+
+function searchA() {
+	try{
+		var s = document.getElementById("searchA").value;
+		var i = toInt(s);
+		print("output", simpleSurd(i));
+	}catch(ex){
+		print("output", ex.message);
+	}
+}
+
+function searchB() {
+	try{
+		var s = document.getElementById("searchB").value;
+		var ab = s.split("/");
+		var a = toInt(ab[0]);
+		var b = toInt(ab[1]);
+		print("output", "√" + (a * a * b));
+	}catch(ex){
+		print("output", ex.message);
+	}
+}
+
+function print(id, str){
+	document.getElementById(id).value = str;
 }
 
 function isInt(n){
 	return (n ^ 0) === n;
 }
 
+function toInt(str){
+	var i = parseInt(str);
+	if(isNaN(i)){
+		throw "Invaild input";
+	}
+	return i;
+}
